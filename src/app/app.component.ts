@@ -10,4 +10,8 @@ import { CoursesComponent } from './courses/courses.component';
 })
 export class AppComponent {
   title = 'courses';
+
+  handleSeeMore() {
+    console.log('See more clicked, the event was emmitted by child component!', );
+  }
 }

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { COURSES } from '../../../public/assets/data';
 
@@ -9,12 +9,16 @@ import { COURSES } from '../../../public/assets/data';
   styleUrl: './courses.component.css'
 })
 export class CoursesComponent {
-  @Input()
-  title : string | undefined;
-  
   courses = COURSES;
 
+  @Input()
+  title: string | undefined;
+
+  @Output() element = new EventEmitter<void>();
 
 
+  onSeeMore() {
+    this.element.emit();
+  }
 
 }
