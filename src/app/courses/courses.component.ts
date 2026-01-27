@@ -1,10 +1,11 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { COURSES } from '../../../public/assets/data';
+import { CommonModule, NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-courses',
-  imports: [MatCardModule],
+  imports: [MatCardModule, NgFor],
   templateUrl: './courses.component.html',
   styleUrl: './courses.component.css'
 })

@@ -1,8 +1,9 @@
 <h1>{{title}}</h1>
 <h2>Choose the Course of your choice and get a job ASAP</h2>
 
-@for (course of courses; track course.id) {
-<mat-card appearance="outlined">
+<!--@for (course of courses; track course.id) {-->
+
+<mat-card appearance="outlined" *ngFor="let course of courses">
   <mat-card-header>
     <mat-card-title> {{course.title}}</mat-card-title>
     <mat-card-subtitle>{{course.description}}</mat-card-subtitle>
@@ -11,8 +12,10 @@
     <button matButton (click)="onSeeMore()">See More</button>
   </mat-card-actions>
 </mat-card>
+
+<!--
 }
 @empty {
 <h1>No courses available</h1>
-}
+}*/-->
 <br>
