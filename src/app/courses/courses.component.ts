@@ -9,7 +9,7 @@ import { COURSES } from '../../../public/assets/data';
   styleUrl: './courses.component.css'
 })
 export class CoursesComponent {
-  courses = COURSES;
+  courses = [...COURSES.courses];
 
   @Input()
   title: string | undefined;
