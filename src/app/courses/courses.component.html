@@ -5,6 +5,11 @@
 
 <mat-card appearance="outlined" *ngFor="let course of courses">
   <mat-card-header>
+    @if (course.image) {
+    <img mat-card-avatar [src]="course.image" alt="Course image">
+    } @else {
+    <h1>Image is not available!</h1>
+    }
     <mat-card-title> {{course.title}}</mat-card-title>
     <mat-card-subtitle>{{course.description}}</mat-card-subtitle>
   </mat-card-header>

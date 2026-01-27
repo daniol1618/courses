@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { MatCardModule } from '@angular/material/card';
+import { MatCardAvatar, MatCardModule } from '@angular/material/card';
 import { COURSES } from '../../../public/assets/data';
 import { CommonModule, NgFor } from '@angular/common';
 
