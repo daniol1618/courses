@@ -3,24 +3,27 @@
 
 <!--@for (course of courses; track course.id) {-->
 
-<mat-card appearance="outlined" *ngFor="let course of courses">
-  <mat-card-header>
-    @if (course.image) {
-    <img mat-card-avatar [src]="course.image" alt="Course image">
-    } @else {
-    <h1>Image is not available!</h1>
-    }
-    <mat-card-title> {{course.title}}</mat-card-title>
-    <mat-card-subtitle>{{course.description}}</mat-card-subtitle>
-  </mat-card-header>
-  <mat-card-actions>
-    <button matButton (click)="onSeeMore()">See More</button>
-  </mat-card-actions>
-</mat-card>
-
-<!--
+<div *ngIf="areThereCourses(); else noCourses">
+  <mat-card appearance="outlined" *ngFor="let course of courses">
+    <mat-card-header>
+      <!--@if (course.image) {-->
+      <img mat-card-avatar [src]="course.image" alt="Course image">
+      <!--} @else {-->
+      <h1>Image is not available!</h1>
+      <!--}-->
+      <mat-card-title> {{course.title}}</mat-card-title>
+      <mat-card-subtitle>{{course.description}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-actions>
+      <button matButton (click)="onSeeMore()">See More</button>
+    </mat-card-actions>
+  </mat-card>
+  <!--
 }
 @empty {
 <h1>No courses available</h1>
 }*/-->
-<br>
+</div>
+<ng-template #noCourses>
+  <h1>Sorry, there are no courses available at this moment!</h1>
+</ng-template>
